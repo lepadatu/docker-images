@@ -17,7 +17,7 @@ node {
 stage 'Dev'
 node {
     dir('./demo') {
-        #servers = load 'servers.groovy'
+//        servers = load 'servers.groovy'
         mvn 'clean package'
         dir('target') {stash name: 'war', includes: 'x.war'}
     }

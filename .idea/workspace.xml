@@ -2,26 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8833bee-d40f-49f2-8358-e28f1f770251" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/Dockerfile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/build.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/container-scripts/add-machine.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/container-scripts/add-server.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/container-scripts/commonfuncs.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/container-scripts/create-wls-domain.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/container-scripts/createMachine.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/container-scripts/createServer.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/container-scripts/waitForAdminServer.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/container-scripts/wlst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/demo/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/demo/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/demo/servers.groovy" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/demo/sometests/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/demo/sometests/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/demo/sometests/src/test/java/org/jenkinsci/plugins/workflow/demo/AppTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/demo/src/main/webapp/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OracleWebLogic/samples/1221-demo/demo/src/main/webapp/index.jsp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Jenkinsfile" afterPath="$PROJECT_DIR$/Jenkinsfile" />
     </list>
@@ -45,17 +25,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Jenkinsfile" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Jenkinsfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Jenkinsfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+            <state relative-caret-position="342">
+              <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="servers.groovy" pinned="false" current-in-tab="true">
+      <file leaf-file-name="servers.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/servers.groovy">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
@@ -685,11 +665,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464613067704</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed comments">
+      <created>1464620397363</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1464620397363</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="30" width="1282" height="635" extended-state="7" />
+    <frame x="-1" y="30" width="1282" height="635" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -727,7 +714,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refresh" />
     <MESSAGE value="Added build support for weblogic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added build support for weblogic" />
+    <MESSAGE value="Fixed comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -869,18 +857,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Jenkinsfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/servers.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Jenkinsfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
           <folding />
         </state>
       </provider>
