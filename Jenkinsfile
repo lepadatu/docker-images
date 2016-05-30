@@ -11,9 +11,9 @@ node {
     }
     dir('./OracleWebLogic/samples/1221-domain') {
         sh "./build.sh luxoftadmin1"
-    }
+    } */
 }
-*/
+
 stage 'Dev'
 node {
     dir('./demo') {
