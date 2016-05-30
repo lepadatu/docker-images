@@ -2,8 +2,8 @@ def deploy(id) {
     //unstash 'war'
     println "Current dir:"
     sh "pwd"
-    def staging = id.equalsIgnoreCase("staging")
-    def production = id.equalsIgnoreCase("production")
+    def staging = id.equals("staging")
+    def production = id.equals("production")
     if (!staging && !production) {
         sh "pwd"
 /*        sh "cp x.war OracleWebLogic/samples/1221-demo-qa/${id}.war"
