@@ -53,9 +53,6 @@ RUN /u01/oracle/wlst /u01/oracle/create-wls-domain.py && \
 
 USER oracle
 COPY x.war u01/oracle/applications/qa/demoApp/v1/app
-RUN wlst.sh && \
-    connect("weblogic","$ADMIN_PASSWORD","t3://172.30.163.131:8001") && \
-    deploy("demoApp", "/u01/oracle/applications/qa/demoApp/v1/app/x.war","AdminServer")
 
 
 
