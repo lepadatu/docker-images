@@ -48,7 +48,7 @@ RUN /u01/oracle/wlst /u01/oracle/create-wls-domain.py && \
     echo ". /u01/oracle/user_projects/domains/base_domain/bin/setDomainEnv.sh" >> /u01/oracle/.bashrc && \ 
     echo "export PATH=$PATH:/u01/oracle/wlserver/common/bin:/u01/oracle/user_projects/domains/base_domain/bin" >> /u01/oracle/.bashrc && \
     mkdir -p /u01/oracle/applications/qa/demoApp/v1/app && \
-    mkdir -p /u01/oracle/applications/qa/demoApp/v1/plan && \
+    mkdir -p /u01/oracle/applications/qa/demoApp/v1/plan
 
 
 USER oracle
