@@ -24,6 +24,7 @@ node {
 }
 
 stage 'QA'
+node {
 servers = load 'servers.groovy'
 /*parallel(longerTests: {
     runTests(servers, 30)
@@ -31,6 +32,7 @@ servers = load 'servers.groovy'
     runTests(servers, 20)
 }) */
 servers.deploy('123')
+}
 
 def mvn(args) {
     sh "${tool 'M3'}/bin/mvn ${args}"
