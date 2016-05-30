@@ -35,6 +35,7 @@ ENV DOMAIN_NAME="base_domain" \
     CLUSTER_NAME="DockerCluster" \
     CONFIG_JVM_ARGS="-Dweblogic.security.SSL.ignoreHostnameVerification=true" \
     PATH=$PATH:/u01/oracle/oracle_common/common/bin:/u01/oracle/wlserver/common/bin:/u01/oracle/user_projects/domains/base_domain/bin:/u01/oracle
+    DEPLOY_CMD="java weblogic.Deployer -adminurl t3://prod01.domain.local:8001 -username weblogic -password ${ADMIN_PASSWORD} -deploy -targets AdminServer /u01/oracle/applications/qa/demoApp/v1/app/x.war"
 
 # Add files required to build this image
 USER oracle
@@ -47,6 +48,15 @@ RUN /u01/oracle/wlst /u01/oracle/create-wls-domain.py && \
     echo "password=$ADMIN_PASSWORD" >> /u01/oracle/user_projects/domains/base_domain/servers/AdminServer/security/boot.properties && \
     echo ". /u01/oracle/user_projects/domains/base_domain/bin/setDomainEnv.sh" >> /u01/oracle/.bashrc && \ 
     echo "export PATH=$PATH:/u01/oracle/wlserver/common/bin:/u01/oracle/user_projects/domains/base_domain/bin" >> /u01/oracle/.bashrc && \
+    mkdir -p /u01/oracle/applications/qa/demoApp/v1/app && \
+    mkdir -p /u01/oracle/applications/qa/demoApp/v1/plan && \
+    cd $DOMAIN_HOME/bin && \
+    ./setDomainEnv.sh
+
+USER oracle
+COPY x.war u01/oracle/applications/qa/demoApp/v1/app
+RUN java weblogic.Deployer -adminurl t3://172.30.163.131:8001 -username weblogic -password ${ADMIN_PASSWORD} -deploy -targets AdminServer /u01/oracle/applications/qa/demoApp/v1/app/x.war
+
 
 
 # Expose Node Manager default port, and also default for admin and managed server 
