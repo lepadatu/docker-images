@@ -1,7 +1,18 @@
 def deploy(id) {
+    //unstash 'war'
+    println "Current dir:"
+    sh "pwd"
+    def staging = id.equalsIgnoreCase("staging")
+    def production = id.equalsIgnoreCase("production")
+    if (!staging && !production) {
+        sh "pwd"
+/*        sh "cp x.war OracleWebLogic/samples/1221-demo-qa/${id}.war"
+        "cd".execute(null, new File("OracleWebLogic/samples/1221-demo-qa"))
+    }
     "cd".execute(null, new File("OracleWebLogic/samples/1221-demo"))
-    unstash 'war'
-//    sh "cp x.war /tmp/webapps/${id}.war"
+
+    sh "cp x.war /tmp/webapps/${id}.war" */
+    }
 }
 
 def undeploy(id) {
