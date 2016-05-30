@@ -7,6 +7,6 @@ node {
     }
     dir('./OracleWebLogic/dockerfiles') {
         sh "cp /opt/weblogic/fmw_12.2.1.0.0_wls_quick_Disk1_1of1.zip ./12.2.1/"
-        sh "docker build -v 12.2.1 -d"
+        sh "docker build -v 12.2.1 -d "
     }
 }
