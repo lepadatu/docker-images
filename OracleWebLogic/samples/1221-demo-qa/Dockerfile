@@ -49,12 +49,13 @@ RUN /u01/oracle/wlst /u01/oracle/create-wls-domain.py && \
     echo "export PATH=$PATH:/u01/oracle/wlserver/common/bin:/u01/oracle/user_projects/domains/base_domain/bin" >> /u01/oracle/.bashrc && \
     mkdir -p /u01/oracle/applications/qa/demoApp/v1/app && \
     mkdir -p /u01/oracle/applications/qa/demoApp/v1/plan && \
-    cd $DOMAIN_HOME/bin && \
-    ./setDomainEnv.sh
+
 
 USER oracle
 COPY x.war u01/oracle/applications/qa/demoApp/v1/app
-RUN java weblogic.Deployer -adminurl t3://172.30.163.131:8001 -username weblogic -password ${ADMIN_PASSWORD} -deploy -targets AdminServer /u01/oracle/applications/qa/demoApp/v1/app/x.war
+RUN wlst.sh && \
+    connect("weblogic","$ADMIN_PASSWORD","t3://172.30.163.131:8001") && \
+    deploy("demoApp", "/u01/oracle/applications/qa/demoApp/v1/app/x.war","AdminServer")
 
 
 
