@@ -30,6 +30,10 @@ node {
 //    runTests(servers, 20)
 //})
 
+def mvn(args) {
+    sh "${tool 'M3'}/bin/mvn ${args}"
+}
+
 
 def runTests(servers, duration) {
     node {
