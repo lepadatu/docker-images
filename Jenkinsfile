@@ -1,4 +1,4 @@
-stage 'Dev'
+stage 'Prerequisites'
 node {
 	checkout scm
 	dir('./OracleJDK/java-8') {
@@ -12,4 +12,12 @@ node {
     dir('./OracleWebLogic/samples/1221-domain') {
         sh "./build.sh luxoftadmin1"
     }
+}
+
+stage 'Dev'
+node {
+    dir('./OracleWebLogic/samples/1221-demo') {
+
+    }
+
 }
