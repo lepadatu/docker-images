@@ -25,7 +25,7 @@ node {
 
 stage 'QA'
 node {
-servers = load 'servers.groovy'
+servers = load 'demo/servers.groovy'
 /*parallel(longerTests: {
     runTests(servers, 30)
 }, quickerTests: {
