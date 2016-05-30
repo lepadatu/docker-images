@@ -35,7 +35,6 @@ ENV DOMAIN_NAME="base_domain" \
     CLUSTER_NAME="DockerCluster" \
     CONFIG_JVM_ARGS="-Dweblogic.security.SSL.ignoreHostnameVerification=true" \
     PATH=$PATH:/u01/oracle/oracle_common/common/bin:/u01/oracle/wlserver/common/bin:/u01/oracle/user_projects/domains/base_domain/bin:/u01/oracle
-    DEPLOY_CMD="java weblogic.Deployer -adminurl t3://prod01.domain.local:8001 -username weblogic -password ${ADMIN_PASSWORD} -deploy -targets AdminServer /u01/oracle/applications/qa/demoApp/v1/app/x.war"
 
 # Add files required to build this image
 USER oracle
