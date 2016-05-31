@@ -12,7 +12,7 @@ node {
     dir('./OracleWebLogic/samples/1221-domain') {
         println "Current dir:"
         sh "pwd"
-        sh "./build.sh luxoftadmin1"
+        sh "docker build --build-arg ADMIN_PASSWORD=luxoftadmin1 -t 1221-domain ."
     }
 }
 
