@@ -32,7 +32,7 @@ stage 'QA'
 node {
     servers = load 'demo/servers.groovy'
     parallel(longerTests: {
-        runTests(servers, 30)
+        runTests(servers, 40)
     }, quickerTests: {
         runTests(servers, 20)
     })
@@ -47,7 +47,7 @@ def runTests(servers, duration) {
     node {
         checkout scm
         servers.runWithServer {id ->
-            mvn "-f sometests test -Durl=${WLUrl}/${id}/ -Dduration=${duration}"
+            mvn "-f demo/sometests test -Durl=${WLUrl}/${id}/ -Dduration=${duration}"
         }
     }
 }
