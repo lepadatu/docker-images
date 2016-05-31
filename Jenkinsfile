@@ -38,6 +38,21 @@ node {
     })
 }
 
+stage name: 'Staging', concurrency: 1
+    node {
+        servers.deploy 'staging'
+    }
+
+    input message: "Does ${jettyUrl}staging/ look good?"
+
+stage name: 'Production', concurrency: 1
+    node {
+        sh "wget -O - -S ${WLUrl}staging/"
+        echo 'Production server looks to be alive'
+        servers.deploy 'production'
+        echo "Deployed to ${jettyUrl}production/"
+    }
+
 def mvn(args) {
     sh "${tool 'M3'}/bin/mvn ${args}"
 }
