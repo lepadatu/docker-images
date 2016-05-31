@@ -3,8 +3,8 @@ def deploy(id) {
     def staging = id.equals("staging")
     def production = id.equals("production")
     if (!staging && !production) {
-        sh "cp x.war OracleWebLogic/samples/1221-demo-qa/"
-        sh "docker build -t 1221-demo-qa --build-arg ADMIN_PASSWORD=luxoftadmin1 OracleWebLogic/samples/1221-demo-qa/"
+        sh "cp x.war OracleWebLogic/samples/1221-appdeploy-qa/container-scripts/qa.war"
+        sh "docker build -t 1221-appdeploy-qa OracleWebLogic/samples/1221-appdeploy-qa/"
     }
     if (staging || production) {
         sh "cp x.war OracleWebLogic/samples/1221-demo-${id}/${id}.war"
