@@ -2,7 +2,7 @@ def deploy(id) {
     unstash 'war'
     if (id.equals("staging") || id.equals("production") || id.equals("qa")) {
         sh "echo PWD: `pwd`"
-        sh "cp x.war OracleWebLogic/samples/1221-demo-${id}/${id}.war"
+        sh "cp x.war OracleWebLogic/samples/1221-appdeploy-${id}/${id}.war"
         sh "docker build -t 1221-appdeploy-${id} OracleWebLogic/samples/1221-appdeploy-${id}/"
     }
 
