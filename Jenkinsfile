@@ -43,7 +43,7 @@ stage name: 'Staging', concurrency: 1
         servers.deploy 'staging'
     }
 
-    input message: "Does ${jettyUrl}staging/ look good?"
+    input message: "Does ${WLUrl}staging/ look good?"
 
 stage name: 'Production', concurrency: 1
     node {
