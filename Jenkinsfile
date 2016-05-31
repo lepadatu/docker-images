@@ -1,3 +1,7 @@
+WLUrl = 'http://localhost:8001'
+
+def servers
+
 stage 'Prerequisites'
 node {
 	checkout scm
@@ -16,10 +20,9 @@ node {
     }*/
 }
 
-stage 'Dev'
+stage 'Build'
 node {
     dir('./demo') {
-//        servers = load 'demo/servers.groovy'
         mvn 'clean package'
         dir('target') {stash name: 'war', includes: 'x.war'}
     }
@@ -27,13 +30,12 @@ node {
 
 stage 'QA'
 node {
-servers = load 'demo/servers.groovy'
-/*parallel(longerTests: {
-    runTests(servers, 30)
-}, quickerTests: {
-    runTests(servers, 20)
-}) */
-servers.deploy('123')
+    servers = load 'demo/servers.groovy'
+    parallel(longerTests: {
+        runTests(servers, 30)
+    }, quickerTests: {
+        runTests(servers, 20)
+    })
 }
 
 def mvn(args) {
@@ -45,7 +47,7 @@ def runTests(servers, duration) {
     node {
         checkout scm
         servers.runWithServer {id ->
-            mvn "-f sometests test -Durl=${jettyUrl}${id}/ -Dduration=${duration}"
+            mvn "-f sometests test -Durl=${WLUrl}/${id}/ -Dduration=${duration}"
         }
     }
 }
