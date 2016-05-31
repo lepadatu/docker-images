@@ -8,6 +8,7 @@ def deploy(id) {
     }
     if (staging || production) {
         sh "cp x.war OracleWebLogic/samples/1221-demo-${id}/${id}.war"
+        sh "docker build -t 1221-appdeploy-${id} OracleWebLogic/samples/1221-appdeploy-${id}/"
     }
 
 }
