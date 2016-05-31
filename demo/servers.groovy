@@ -13,7 +13,7 @@ def deploy(id) {
 def undeploy(id) {
     sh "rm x.war"
     //If there are already docker images with the same name, delete their corresponding containers and then delete them
-    sh "[ -z $(docker images -q 1221-appdeploy-${id}) ] || docker rm $(docker stop $(docker ps -a -q --filter ancestor=1221-appdeploy-${id})) || \
+    sh "[ -z `docker images -q 1221-appdeploy-${id}` ] || docker rm `docker stop `docker ps -a -q --filter ancestor=1221-appdeploy-${id}`` || \
             docker rmi 1221-appdeploy-${id}"
     sleep(5000)
 }
