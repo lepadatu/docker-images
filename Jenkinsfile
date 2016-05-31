@@ -10,6 +10,8 @@ node {
         sh "./buildDockerImage.sh -v 12.2.1 -d"
     }
     dir('./OracleWebLogic/samples/1221-domain') {
+        println "Current dir:"
+        sh "pwd"
         sh "./build.sh luxoftadmin1"
     }
 }
